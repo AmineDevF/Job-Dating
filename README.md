@@ -94,7 +94,7 @@ Responsable de la gestion complète de la plateforme :
 ## Module 3 : Gestion des Annonces
 
 ### Création d’Annonce
-- Champs : titre, entreprise, type de contrat, localisation, description, compétences
+- Champs : titre, entreprise, type de contrat, localisation, image , description, compétences 
 - Validation complète côté serveur
 - Insertion sécurisée en base PostgreSQL
 - Protection XSS / SQL Injection
