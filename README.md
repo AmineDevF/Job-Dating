@@ -15,7 +15,7 @@ Le projet repose sur un framework personnalisé comprenant :
 
 - Architecture MVC avec séparation Front Office / Back Office
 - Système de routing personnalisé
-- Base de données PostgreSQL (requêtes préparées via PDO)
+- Base de données  mySQL (PostgreSQL bonus) (requêtes préparées via PDO)
 - Moteur de templates Twig
 - Système d’authentification et gestion sécurisée des sessions
 - Protection CSRF sur les formulaires
