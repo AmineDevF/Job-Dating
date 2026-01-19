@@ -77,7 +77,7 @@ Responsable de la gestion complète de la plateforme :
 - Nombre d’annonces archivées
 - Nombre d’entreprises partenaires
 - Nombre d’apprenants inscrits
-- Données calculées dynamiquement depuis PostgreSQL
+- Données calculées dynamiquement depuis mySQL (PostgreSQL bonus)
 
 ### Annonces Récentes
 - Affichage des 3 dernières annonces actives
@@ -96,13 +96,13 @@ Responsable de la gestion complète de la plateforme :
 ### Création d’Annonce
 - Champs : titre, entreprise, type de contrat, localisation, image , description, compétences 
 - Validation complète côté serveur
-- Insertion sécurisée en base PostgreSQL
+- Insertion sécurisée en base  mySQL (PostgreSQL bonus)
 - Protection XSS / SQL Injection
 - Statut actif par défaut (`deleted = false`)
 
 ### Consultation des Annonces
 - Liste des annonces actives
-- Chargement optimisé avec jointures PostgreSQL
+- Chargement optimisé avec jointures  mySQL (PostgreSQL bonus)
 - Tri par date de création
 - Actions : modifier / archiver
 
@@ -131,7 +131,7 @@ Responsable de la gestion complète de la plateforme :
 - Nom, secteur, localisation, email unique, téléphone
 - Validation stricte des données
 - Avatar généré automatiquement
-- Insertion sécurisée en base PostgreSQL
+- Insertion sécurisée en base  mySQL (PostgreSQL bonus)
 
 ### Consultation
 - Affichage en grille responsive
@@ -156,7 +156,7 @@ Responsable de la gestion complète de la plateforme :
 ### Consultation
 - Liste complète des apprenants
 - Tableau avec nom, email, promotion, spécialisation
-- Données issues des relations PostgreSQL
+- Données issues des relations mySQL (PostgreSQL bonus)
 - Consultation uniquement (pas de CRUD)
 
 ---
@@ -267,6 +267,6 @@ job_dating/
 - Protection CSRF sur tous les formulaires
 - Validation systématique des entrées utilisateur
 - Échappement des données affichées (XSS)
-- Requêtes préparées PostgreSQL (PDO)
+- Requêtes préparées  mySQL (PostgreSQL / bonus) (PDO)
 - Séparation stricte des accès admin / apprenant
 - Nettoyage complet des sessions à la déconnexion
