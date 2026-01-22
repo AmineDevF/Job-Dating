@@ -180,6 +180,115 @@ Responsable de la gestion complète de la plateforme :
 - Filtres combinables
 - Mise à jour dynamique des résultats
 
+## Module 7 : Candidatures aux Offres 
+
+### Rôles concernés
+- Apprenant
+- Administrateur
+
+---
+
+## User Stories
+
+### Apprenant
+
+#### US-01 : Postuler à une offre
+En tant qu’apprenant  
+Je veux postuler à une offre d’emploi  
+Afin de soumettre ma candidature à une entreprise  
+
+**Critères d’acceptation :**
+- L’apprenant doit être authentifié
+- Le bouton "Postuler" est visible uniquement sur les offres actives
+- Un apprenant ne peut postuler qu’une seule fois par offre
+- Le formulaire de candidature contient :
+  - Message de motivation
+  - Téléversement du CV (PDF uniquement) (bonus)
+- Validation complète côté serveur
+- Protection CSRF activée
+- Le CV est stocké de manière sécurisée
+- La candidature est enregistrée en base de données
+- Un message de confirmation s’affiche après soumission
+
+---
+
+#### US-02 : Consulter mes candidatures
+En tant qu’apprenant  
+Je veux consulter les offres auxquelles j’ai postulé  
+Afin de suivre l’état de mes candidatures  
+
+**Critères d’acceptation :**
+- L’apprenant accède uniquement à ses propres candidatures
+- Chaque candidature affiche :
+  - Titre de l’offre
+  - Nom de l’entreprise
+  - Date de candidature
+  - Statut (En attente / Acceptée / Refusée)
+- Les données sont récupérées via des jointures sécurisées en base
+
+---
+
+### Administrateur
+
+#### US-03 : Voir les candidatures d’une offre
+En tant qu’administrateur  
+Je veux consulter les candidatures associées à une annonce  
+Afin d’analyser l’intérêt des apprenants pour cette offre  
+
+**Critères d’acceptation :**
+- Accès réservé aux administrateurs authentifiés
+- Depuis une annonce, l’admin peut consulter la liste des candidatures
+- Chaque candidature affiche :
+  - Nom et prénom de l’apprenant
+  - Email
+  - Promotion
+  - Spécialisation
+  - Message de motivation
+  - CV téléchargeable (bonus)
+  - Date de candidature
+- Tri par date de candidature décroissante
+
+---
+
+#### US-04 : Gérer le statut d’une candidature
+En tant qu’administrateur  
+Je veux mettre à jour le statut d’une candidature  
+Afin de suivre le processus de recrutement  
+
+**Critères d’acceptation :**
+- Statuts disponibles :
+  - En attente (par défaut)
+  - Acceptée
+  - Refusée
+- La modification est enregistrée en base de données
+- Protection CSRF sur l’action
+- Contrôle strict des rôles
+- Le statut mis à jour est visible par l’apprenant
+
+---
+
+## Modèle de Données – Candidatures
+
+applications
+- id
+- student_id (FK)
+- announcement_id (FK)
+- motivation
+- cv_path (bonus)
+- status (pending | accepted | rejected)
+- created_at
+- updated_at
+
+---
+
+## Contraintes de Sécurité Spécifiques
+
+- Upload limité aux fichiers PDF
+- Vérification du type MIME
+- Taille maximale du fichier contrôlée
+- Accès aux CV réservé aux administrateurs
+- Un apprenant ne peut consulter que ses propres candidatures
+
 ---
 
 ## 🗂️ Structure MVC Proposée
